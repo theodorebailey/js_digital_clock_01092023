@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="s.css">
 </head>
 <body>
+    <!-- create our hero element to populate with time -->
     <div class="hero">
+        <!-- create a container for all span id time elements -->
         <div class="container">
+            <!-- create our clock division -->
             <div class="clock">
+                <!-- span elements with ids to populate with time -->
                 <span id="hrs">00</span>
+                <!-- colons between -->
                 <span>:</span>
+                <!-- minutes  -->
                 <span id="min">00</span>
+                <!-- colons between for division -->
                 <span>:</span>
+                <!-- seconds -->
                 <span id="sec">00</span>
             </div>
         </div>
@@ -21,18 +29,22 @@
 
     <script>
 
+        // grab our hour, minute and second id span elements
         let hrs = document.getElementById("hrs");
         let min = document.getElementById("min");
         let sec = document.getElementById("sec");
 
+        // create a setInterval function
         setInterval(()=> {
+            // create an instance of current Date with a new Date() method call
             let currentTime = new Date();
+            // check currentTimes hours, if less than 10 add a 0 + currentTime.getHours and populate HTML
             hrs.innerHTML = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+            // populate innerHTML of minutes with curent time in minutes with addition of 0 if less than 10
             min.innerHTML = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+            // populate seconds inner HTML with seconds of current time with addition of 0 if less than 10
             sec.innerHTML = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
         },1000)
-
-        
     </script>
 </body>
 </html>
